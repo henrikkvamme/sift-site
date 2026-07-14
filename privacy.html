@@ -11,7 +11,10 @@
     <main>
       <a class="back" href="./">Sift</a>
       <h1>Privacy</h1>
-      <p class="lede">Sift processes YouTube pages locally. It does not collect your data.</p>
+      <p class="lede">
+        Sift's focus features run locally. Hosted AI is optional and transfers content only after
+        you choose to use it.
+      </p>
 
       <h2>What Sift handles</h2>
       <p>
@@ -27,10 +30,35 @@
         transcripts, or adult-site activity.
       </p>
 
+      <h2>Optional hosted AI</h2>
+      <p>
+        When you request a Sift Plus summary or chat answer, Sift sends the selected video's
+        transcript, your question, and recent in-memory chat context to the Sift API and OpenRouter.
+        Sift uses OpenRouter's zero-data-retention routing and denies providers that collect prompt
+        data. Sift does not save transcript, question, chat, or answer content after the request
+        finishes.
+      </p>
+      <p>
+        The Sift API stores an opaque installation ID, a keyed hash of the installation credential,
+        subscription status, Stripe customer and subscription identifiers, signed webhook event
+        identifiers, and monthly AI-request counts. These records provide access, prevent duplicate
+        billing events, enforce the monthly allowance, and protect the service from abuse.
+      </p>
+
+      <h2>Payments</h2>
+      <p>
+        Stripe processes Sift Plus checkout details such as email, billing country, tax information,
+        and payment method under
+        <a href="https://stripe.com/privacy">Stripe's privacy policy</a>. Sift receives customer and
+        subscription identifiers but does not receive or store complete card details.
+      </p>
+
       <h2>Sharing and sale</h2>
       <p>
-        The Chrome Web Store edition does not send data to the developer or another service. Sift
-        does not sell data, use data for advertising, or use data for lending or credit decisions.
+        Sift shares hosted-AI content only with the Sift API, OpenRouter, and an eligible
+        zero-data-retention model provider to return the answer you requested. Stripe receives
+        payment and subscription data. Sift does not sell data, use data for advertising, or use
+        data for lending or credit decisions.
       </p>
 
       <h2>Control and retention</h2>
@@ -38,6 +66,12 @@
         Usage totals are retained for the period selected in Settings. You can export the totals or
         delete all Sift settings and measurements at any time. Uninstalling Sift also removes its
         browser storage.
+      </p>
+      <p>
+        Use <strong>Delete hosted account</strong> in Settings to cancel an active Sift Plus
+        subscription immediately, delete the hosted installation and entitlement records, and clear
+        the browser credential. Stripe and Sift may retain transaction records where law requires
+        it.
       </p>
 
       <h2>Permissions</h2>
@@ -59,7 +93,7 @@
         or support, open an issue on the
         <a href="https://github.com/henrikkvamme/sift-site/issues">Sift support page</a>.
       </p>
-      <p class="fine">Effective 13 July 2026</p>
+      <p class="fine">Effective 14 July 2026</p>
     </main>
   </body>
 </html>

@@ -66,6 +66,22 @@ nav {
   margin-top: 44px;
 }
 
+section {
+  margin-top: 48px;
+  padding-block: 28px;
+  border-block: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+.price strong {
+  color: #171714;
+  font-size: 28px;
+  font-weight: 500;
+}
+
 a {
   color: inherit;
   text-decoration-thickness: 1px;
@@ -93,6 +109,10 @@ a {
   }
 
   .lede {
+    color: #f2f0eb;
+  }
+
+  .price strong {
     color: #f2f0eb;
   }
 }
