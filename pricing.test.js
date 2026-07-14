@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 
-import { premiumPriceForLocales } from './pricing.mjs'
+import { premiumPriceForLocales } from './pricing.js'
 
 test('localizes the configured Stripe prices', () => {
   assert.equal(premiumPriceForLocales(['nb-NO']), '89 NOK')
