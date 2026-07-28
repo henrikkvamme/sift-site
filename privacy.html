@@ -29,8 +29,8 @@
       <h2>What Sift stores</h2>
       <p>
         Settings, temporary pass state, and hourly usage totals stay in your browser's local or
-        session storage. Sift does not store searches, URLs, titles, channel names, video IDs,
-        transcripts, or adult-site activity.
+        session storage. Sift does not store searches, URLs, video IDs, transcripts, or adult-site
+        activity.
       </p>
 
       <h2>Hosted AI</h2>
@@ -46,6 +46,13 @@
         subscription status, Stripe customer and subscription identifiers, signed webhook event
         identifiers, and monthly AI-request counts. These records provide access, prevent duplicate
         billing events, enforce the monthly allowance, and protect the service from abuse.
+      </p>
+      <p>
+        If you explicitly allow AI feed calibration, Sift also stores one bounded onboarding draft
+        for your authenticated installation. It contains visible titles, channel names, metadata,
+        descriptions, and your ordering or hide choices. It does not contain thumbnails, URLs, or
+        video IDs. This lets Sift restore your choices after a provider, quota, or network error.
+        The draft is deleted when you accept the feed or after 30 days.
       </p>
 
       <h2>Payments</h2>
@@ -68,7 +75,8 @@
       <p>
         Usage totals are retained for the period selected in Settings. You can export the totals or
         delete all Sift settings and measurements at any time. Uninstalling Sift also removes its
-        browser storage.
+        browser storage. High Signal onboarding drafts expire after 30 days and are deleted when
+        you accept the feed.
       </p>
       <p>
         Use <strong>Delete hosted account</strong> in Settings to cancel an active Sift Premium
