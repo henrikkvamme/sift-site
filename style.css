@@ -110,3 +110,71 @@ figcaption { padding-top: 14px; font-size: 13px; color: var(--ink-faint); }
   .pricing { grid-template-columns: 1fr; gap: 32px; padding: 40px 0; }
   .back { margin-bottom: 48px; }
 }
+
+.header-nav { display: flex; gap: 28px; }
+.platform-note { margin-top: 6px; font-size: 13px; color: var(--ink-faint); }
+.platform-note a { margin-left: 6px; }
+.section-label { margin-bottom: 22px; font-size: 13px; color: var(--ink-faint); }
+.roadmap { display: grid; grid-template-columns: 0.8fr 1.2fr; column-gap: 80px; padding: 80px 0 64px; border-top: 1px solid var(--rule); scroll-margin-top: 32px; }
+.roadmap-intro h2, .early-access h2 { font-size: clamp(32px, 4vw, 46px); line-height: 1.12; letter-spacing: -0.04em; }
+.roadmap-intro > p:last-child { margin-top: 22px; max-width: 25ch; }
+.roadmap-list { list-style: none; margin: 0; padding: 0; }
+.roadmap-list li { display: flex; gap: 22px; padding: 28px 0; border-bottom: 1px solid var(--rule); }
+.roadmap-list li:first-child { padding-top: 0; }
+.roadmap-number { padding-top: 5px; color: var(--ink-faint); font-size: 12px; font-variant-numeric: tabular-nums; }
+.roadmap-content { flex: 1; min-width: 0; }
+.roadmap-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.roadmap-heading h3 { font-size: 21px; font-weight: 500; line-height: 1.35; letter-spacing: -0.025em; margin: 0; }
+.roadmap-status { flex-shrink: 0; font-size: 11px; color: var(--ink-soft); }
+.roadmap-content p { font-size: 15px; margin-top: 12px; }
+.roadmap-scope { display: block; font-size: 12px; color: var(--ink-faint); margin-top: 9px; }
+.roadmap-note { grid-column: 2; margin-top: 24px; font-size: 12px; color: var(--ink-faint); }
+.early-access { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding: 80px 0 96px; border-top: 1px solid var(--rule); scroll-margin-top: 32px; }
+.early-access-copy > p:not([class]) { margin-top: 24px; max-width: 35ch; }
+.early-access-faq { padding-top: 4px; }
+.early-access-faq details { border-bottom: 1px solid var(--rule); }
+.early-access-faq summary { cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 0; font-size: 15px; list-style: none; }
+.early-access-faq summary::-webkit-details-marker { display: none; }
+.early-access-faq summary::after { content: '+'; font-size: 18px; font-weight: 400; color: var(--ink-soft); }
+.early-access-faq details[open] summary::after { content: '−'; }
+.early-access-faq summary:focus-visible { outline: 2px solid var(--ink-soft); outline-offset: 5px; }
+.early-access-faq details p { font-size: 14px; padding: 0 32px 22px 0; }
+@media (max-width: 900px) {
+  .roadmap, .early-access { column-gap: 40px; }
+  .roadmap-heading { align-items: flex-start; flex-direction: column; gap: 6px; }
+}
+@media (max-width: 700px) {
+  .header-nav { gap: 18px; }
+  .roadmap, .early-access { grid-template-columns: 1fr; gap: 40px; padding: 52px 0; }
+  .roadmap-intro > p:last-child { max-width: none; }
+  .roadmap-note { grid-column: 1; margin-top: -20px; }
+  .roadmap-heading { flex-direction: row; align-items: baseline; }
+  .roadmap-heading h3 { font-size: 19px; }
+  .roadmap-list li { gap: 16px; }
+  .early-access-faq { padding-top: 0; }
+}
+@media (max-width: 380px) {
+  .roadmap-heading { flex-direction: column; gap: 6px; }
+  .header-nav { gap: 12px; }
+  .header-link { font-size: 13px; }
+}
+
+/* A quiet timeline separates the product today from its future direction. */
+.roadmap { position: relative; isolation: isolate; border: 0; padding-block: 88px; margin-block: 32px 56px; }
+.roadmap::before { content: ''; position: absolute; inset: 0 min(-32px, calc((1080px - 100vw) / 2)); background: #f0f0ed; z-index: -1; }
+.roadmap-list li { position: relative; border: 0; padding: 0 0 42px; gap: 24px; }
+.roadmap-list li:last-child { padding-bottom: 0; }
+.roadmap-number { flex: 0 0 12px; width: 12px; height: 12px; padding: 0; margin-top: 8px; border: 1px solid #9b9d96; border-radius: 50%; background: #f0f0ed; z-index: 1; }
+.roadmap-list li:not(:last-child)::after { content: ''; position: absolute; left: 5.5px; top: 20px; bottom: -8px; width: 1px; background: #cdd0c8; }
+.roadmap-now .roadmap-number { background: var(--paper); border-color: var(--paper); box-shadow: 0 0 0 5px #e2e3dd; }
+.roadmap-now .roadmap-status { color: var(--paper); font-weight: 500; }
+.roadmap-heading { flex-direction: column; gap: 7px; }
+.roadmap-status { order: -1; font-size: 12px; }
+.roadmap-note { padding-left: 36px; }
+@media (max-width: 700px) {
+  .roadmap { padding-block: 56px; margin-block: 16px 24px; }
+  .roadmap::before { inset-inline: -20px; }
+  .roadmap-list li { gap: 24px; }
+  .roadmap-heading { align-items: flex-start; }
+  .roadmap-note { margin-top: -12px; }
+}
