@@ -6,29 +6,63 @@
     <meta name="description" content="Sift: YouTube, without the noise." />
     <link rel="canonical" href="https://sifttheweb.com/" />
     <link rel="icon" href="./sift-128.png" />
-    <title>Sift</title>
+    <title>Sift - YouTube, without the noise.</title>
     <link rel="stylesheet" href="./style.css" />
     <script type="module" src="./pricing.js"></script>
   </head>
   <body>
-    <main>
-      <img src="./sift-128.png" width="96" height="96" alt="" />
-      <h1>Sift</h1>
-      <p class="lede">YouTube, without the noise.</p>
-      <p>
-        Sift replaces feeds, Shorts, recommendations, comments, and autoplay with focused search and
-        deliberate playback.
-      </p>
-      <a
-        class="install-cta"
-        href="https://chromewebstore.google.com/detail/sift/edhndblebjdnecafmjcbmcdfemmojala"
-      >
-        <span>Install Sift</span>
-        <small>Chrome Web Store</small>
-        <span class="install-cta__arrow" aria-hidden="true">↗</span>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="brand" href="./" aria-label="Sift home">
+        <img class="brand-mark" src="./sift-128.png" width="30" height="30" alt="" />
+        <span>Sift</span>
       </a>
-      <section>
-        <h2>AI answers</h2>
+      <a class="header-link" href="#pricing">AI &amp; pricing</a>
+    </header>
+    <main id="main" class="wrap" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">A quieter YouTube</p>
+        <h1 id="hero-title">Find something good.<br />Leave the noise behind.</h1>
+        <p class="lede">
+          A calm, text-first feed. Search with purpose, get the gist, and choose what to watch.
+        </p>
+        <a
+          class="install-cta"
+          href="https://chromewebstore.google.com/detail/sift/edhndblebjdnecafmjcbmcdfemmojala"
+        >
+          <span>Add Sift to Chrome</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <p class="install-note">Free to install. Optional AI answers.</p>
+      </section>
+      <figure class="app-preview">
+        <picture>
+          <source media="(max-width: 600px)" srcset="./assets/site-home-mobile.png" width="390" height="600" />
+          <img src="./assets/01-focused-search.png" width="1280" height="800"
+          alt="Sift on YouTube: a search bar above a quiet text feed, with video titles, channels, and viewing details." />
+        </picture>
+        <figcaption>YouTube, with room to think.</figcaption>
+      </figure>
+      <section class="features" aria-label="A more intentional way to watch">
+        <div>
+          <h2>Less to pull you in.</h2>
+          <p>A text-first feed, with thumbnails when you want them. Keep Shorts, comments, and autoplay out of the way.</p>
+        </div>
+        <div>
+          <h2>The gist, before you watch.</h2>
+          <p>Enable AI answers for automatic summaries when you hover or focus a video. Ask follow-up questions in chat.</p>
+        </div>
+        <div>
+          <h2>Your next click is yours.</h2>
+          <p>Search for what interests you and play when you choose. Sift keeps the rest of the web as it is.</p>
+        </div>
+      </section>
+      <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+        <div class="section-intro">
+          <h2 id="pricing-title">A little more understanding.</h2>
+          <p>Optional AI answers, built into Sift.</p>
+        </div>
+        <div class="plans">
         <div class="plan">
           <p class="plan-name">Free</p>
           <p class="price"><strong>50 requests</strong> each month</p>
@@ -45,7 +79,10 @@
             Cancel any time from Sift Settings. Ordinary rate limits and abuse prevention apply.
           </p>
         </div>
+        </div>
       </section>
+    </main>
+    <footer class="site-footer wrap">
       <nav aria-label="Sift links">
         <a href="./privacy.html">Privacy</a>
         <a href="./terms.html">Terms</a>
@@ -54,6 +91,6 @@
       <p class="fine">
         Sift is operated by KVAMME CONSULTING, Norwegian organisation number 934 252 632.
       </p>
-    </main>
+    </footer>
   </body>
 </html>
