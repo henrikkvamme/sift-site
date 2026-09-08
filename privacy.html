@@ -29,17 +29,20 @@
       <h2>What Sift stores</h2>
       <p>
         Settings, temporary pass state, and hourly usage totals stay in your browser's local or
-        session storage. Sift does not store searches, URLs, video IDs, transcripts, or adult-site
-        activity.
+        session storage. Completed generic video summaries and their video IDs are cached in a local
+        database so they can be reused across tabs and browser sessions. Sift does not persist
+        searches, URLs, transcripts, chat questions, or adult-site activity.
       </p>
 
       <h2>Hosted AI</h2>
       <p>
-        When you request a summary or chat answer, Sift sends the selected video's transcript, your
+        After you enable AI answers, hovering or keyboard-focusing a video requests a summary. Opening
+        the video reuses its cached summary. For a summary or chat answer, Sift sends the selected video's transcript, your
         question, and recent in-memory chat context to the Sift API and OpenRouter. The free tier
         selects from suitable free models available at the time. Premium uses a paid model. Sift
         uses OpenRouter's zero-data-retention routing and denies providers that collect prompt data.
-        Sift does not save transcript, question, chat, or answer content after the request finishes.
+        The Sift API does not save transcript, question, chat, or answer content after the request
+        finishes. Completed generic summaries are saved only in your browser as described above.
       </p>
       <p>
         The Sift API stores an opaque installation ID, a keyed hash of the installation credential,
@@ -74,7 +77,8 @@
       <h2>Control and retention</h2>
       <p>
         Usage totals are retained for the period selected in Settings. You can export the totals or
-        delete all Sift settings and measurements at any time. Uninstalling Sift also removes its
+        clear local data, including settings, measurements, and cached summaries, at any time. Cached
+        summaries remain until you clear local data or uninstall Sift. Uninstalling Sift also removes its
         browser storage. High Signal onboarding drafts expire after 30 days and are deleted when
         you accept the feed.
       </p>
@@ -87,7 +91,7 @@
 
       <h2>Permissions</h2>
       <p>
-        Sift runs only on youtube.com. It uses storage for local settings and totals, alarms to end
+        Sift runs only on youtube.com. It uses storage for local settings, totals, and cached summaries, alarms to end
         temporary passes, and declarative network rules to redirect distracting YouTube feeds to its
         packaged search page.
       </p>
@@ -107,7 +111,7 @@
         Sift is operated by KVAMME CONSULTING, Norwegian organisation number 934 252 632, from
         Solfjell 13, 5300 Kleppestø, Vestland, Norway.
       </p>
-      <p class="fine">Effective 15 July 2026</p>
+      <p class="fine">Effective 8 September 2026</p>
     </main>
   </body>
 </html>
