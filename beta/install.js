@@ -32,14 +32,14 @@ document.querySelector('#copy-address').addEventListener('click', async () => {
   document.querySelector('#copy-label').textContent = copied ? 'Copied' : 'Copy';
 });
 address.addEventListener('click', () => address.select());
-document.querySelector('#copy-page').addEventListener('click', () => copy('https://sifttheweb.com/beta/', document.querySelector('#page-copy-status')));
+document.querySelector('#copy-page').addEventListener('click', () => copy(location.origin + location.pathname, document.querySelector('#page-copy-status')));
 
 if (!chromium) {
   document.querySelector('#device-notice').hidden = false;
   document.querySelector('#device-message').textContent = mobile ? 'Sift works on computers for now. Open this page in desktop Chrome.' : 'To install Sift, open this page in Chrome on your computer.';
   status.textContent = 'Download Sift for desktop Chrome.';
 } else {
-  const key = `sift-beta-download:${downloadLink.getAttribute('href')}`;
+  const key = `sift-beta-download:${location.pathname}:${downloadLink.getAttribute('href')}`;
   let attempted = false;
   try { attempted = sessionStorage.getItem(key) === 'requested'; } catch { /* The page also works with storage disabled. */ }
   const navigation = performance.getEntriesByType('navigation')[0];

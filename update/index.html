@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Update your Sift beta in three simple steps. Keep your settings and saved summaries." />
+    <link rel="canonical" href="https://sifttheweb.com/update/" />
+    <link rel="icon" type="image/png" href="../assets/favicon-128.png" />
+    <title>Update Sift</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../beta/install.css" />
+    <script type="module" src="../beta/install.js"></script>
+  </head>
+  <body class="install-page" data-mode="update">
+    <a class="skip-link" href="#main">Skip to instructions</a>
+    <header class="site-header wrap">
+      <a class="brand" href="../" aria-label="Sift home"><img class="brand-mark" src="../sift-128.png" width="30" height="30" alt="" /><span>Sift</span></a>
+      <a class="header-link" href="mailto:support@sifttheweb.com">Get help <span aria-hidden="true">↗</span></a>
+    </header>
+    <main class="install-wrap" id="main" tabindex="-1">
+      <header class="install-intro">
+        <div class="edition-label"><span class="edition-dot" aria-hidden="true"></span> Early access</div>
+        <h1>A fresh Sift.<br />Same calm.</h1>
+        <div class="download-line">
+          <svg class="download-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4" /></svg>
+          <p id="download-status" role="status">Your download should start automatically.</p>
+          <a id="download-link" href="../downloads/sift-beta.zip" download="sift-beta.zip">Download ZIP</a>
+        </div>
+        <noscript><p class="help-copy">Select Download ZIP above, then follow the steps below.</p></noscript>
+        <aside id="device-notice" class="device-notice" hidden>
+          <p id="device-message">Install Sift in Chrome on your computer.</p>
+          <button id="copy-page" class="text-button" type="button">Copy this page’s link <span aria-hidden="true">↗</span></button>
+          <p id="page-copy-status" class="help-copy" role="status"></p>
+        </aside>
+      </header>
+      <div class="steps-heading"><span>Update Sift</span><label class="platform-picker"><span class="sr-only">Instructions for</span><select id="platform"><option value="mac">Mac</option><option value="windows">Windows</option><option value="linux">Linux</option></select></label></div>
+      <ol class="install-steps">
+        <li class="install-step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <div class="step-body">
+            <h2>Replace the old files.</h2>
+            <p id="unzip-instruction">Open <strong>sift-beta.zip</strong> and extract its contents.</p>
+            <p>Copy its contents into your <strong>existing Sift folder</strong>. Replace the old files.</p><p class="step-note">Keep the same folder. Don’t remove Sift from Chrome.</p>
+          </div>
+          <div class="unzip-art" aria-hidden="true">
+            <div class="zip-sheet"><span class="zip-seam"></span><span>ZIP</span></div>
+            <svg class="unzip-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15m-5-5 5 5-5 5" /></svg>
+            <div class="sift-folder"><img src="../sift-128.png" width="29" height="29" alt="" /></div>
+          </div>
+        </li>
+        <li class="install-step add-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <div class="step-body">
+            <h2>Reload Sift.</h2>
+            <p>Open your extensions and click <strong>Reload</strong> on Sift’s card.</p>
+            <div class="address-control">
+              <label class="sr-only" for="extensions-address">Chrome extensions address</label>
+              <input id="extensions-address" readonly value="chrome://extensions/" spellcheck="false" />
+              <button id="copy-address" type="button" aria-label="Copy Chrome extensions address"><span id="copy-label">Copy</span></button>
+            </div>
+            <p id="copy-status" class="copy-status" role="status"></p>
+            <figure class="chrome-guide" aria-label="Sift’s extension card. The circular arrow on the right is Reload.">
+              <div class="guide-card"><img src="../sift-128.png" width="26" height="26" alt="" /><div><span>Sift</span><small>YouTube, without the noise.</small></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 7v5h-5M20 12a8 8 0 1 0-2 5M20 7l-3-3"/></svg></div>
+            </figure>
+          </div>
+        </li>
+        <li class="install-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <div class="step-body"><h2>Refresh YouTube.</h2><p>Finish your conversation, then refresh your open YouTube tabs.</p><p class="step-note">Your settings, sign-in and saved summaries stay.</p></div>
+        </li>
+      </ol>
+      <section class="install-finish" aria-label="After installing">
+        <div><h2>Back to a calmer YouTube.</h2><p>The update dot disappears after you reload.</p></div>
+        <a class="install-cta" href="https://www.youtube.com/" target="_blank" rel="noopener">Open YouTube <span aria-hidden="true">↗</span><span class="sr-only"> in a new tab</span></a>
+      </section>
+      <details class="install-help">
+        <summary>Need a hand?</summary>
+        <div class="help-content">
+          <h3>The download didn’t start.</h3><p><a href="../downloads/sift-beta.zip" download="sift-beta.zip">Download the ZIP again</a>. Open it from your browser’s Downloads.</p>
+          <h3>Where is my Sift folder?</h3><p>Open Sift’s Details on the Extensions page. With Developer mode on, look for the path beside Loaded from.</p>
+          <h3>Can’t see Reload?</h3><p>Turn on Developer mode in the top right of the Extensions page.</p>
+          <h3>Installed from the Chrome Web Store?</h3><p>Chrome updates that version automatically. You don’t need this ZIP.</p>
+          <p class="help-contact">Still stuck? <a href="mailto:support@sifttheweb.com">Email us</a>.</p>
+        </div>
+      </details>
+      <p class="beta-note"><span id="beta-version">Early access</span> · Manual updates during early access.</p>
+    </main>
+    <footer class="site-footer wrap"><nav aria-label="Sift links"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></nav></footer>
+  </body>
+</html>

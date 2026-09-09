@@ -8,4 +8,6 @@ COPY --chown=nginx:nginx assets/ /usr/share/nginx/html/assets/
 
 COPY --chown=nginx:nginx beta/ /usr/share/nginx/html/beta/
 
+COPY --chown=nginx:nginx update/ /usr/share/nginx/html/update/
+
 EXPOSE 8080
