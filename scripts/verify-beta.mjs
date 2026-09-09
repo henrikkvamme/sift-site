@@ -16,6 +16,10 @@ const server = createServer(async (req, res) => {
   try {
     const route = decodeURIComponent(new URL(req.url, 'http://localhost').pathname)
     let file = path.resolve(root, '.' + route)
+    if (route === '/downloads/sift-beta.zip' || route === '/downloads/beta.json') {
+      const asset = path.join(sift, 'artifacts', path.basename(route))
+      res.writeHead(200, { 'Content-Type': route.endsWith('.zip') ? 'application/zip' : 'application/json', ...(route.endsWith('.zip') ? { 'Content-Disposition': 'attachment; filename="sift-beta.zip"' } : {}) }).end(await readFile(asset)); return
+    }
     if (!file.startsWith(root + path.sep) && file !== root) { res.writeHead(403).end(); return }
     if ((await stat(file)).isDirectory()) file = path.join(file, 'index.html')
     const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.zip': 'application/zip' }
@@ -45,7 +49,8 @@ try {
   await download.saveAs(archive)
   assert.equal(await download.failure(), null)
   const hash = bytes => createHash('sha256').update(bytes).digest('hex')
-  assert.equal(hash(await readFile(archive)), hash(await readFile(path.join(root, 'assets/downloads/sift-0.7.3-beta.zip'))))
+  const metadata = await (await context.request.get(base + '/downloads/beta.json')).json()
+  assert.equal(hash(await readFile(archive)), metadata.sha256)
   await page.getByRole('button', { name: 'Copy Chrome extensions address' }).click()
   assert.equal(await page.evaluate(() => navigator.clipboard.readText()), 'chrome://extensions/')
   assert.match(await page.locator('#copy-status').textContent(), /Copied/)
@@ -96,7 +101,7 @@ try {
   const unpacked = path.join(output, 'sift-beta')
   execFileSync('unzip', ['-q', archive, '-d', unpacked])
   const manifest = JSON.parse(await readFile(path.join(unpacked, 'manifest.json'), 'utf8'))
-  assert.equal(manifest.version, '0.7.3')
+  assert.equal(manifest.version, metadata.version)
   assert(!manifest.permissions.includes('nativeMessaging'))
   assert.deepEqual(manifest.host_permissions, ['https://www.youtube.com/*', 'https://api.sifttheweb.com/*'])
   const installed = await chromium.launchPersistentContext('', { executablePath, headless: true, args: ["--disable-gpu", `--load-extension=${unpacked}`, `--disable-extensions-except=${unpacked}`] })

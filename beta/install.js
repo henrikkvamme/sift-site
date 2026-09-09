@@ -48,3 +48,8 @@ if (!chromium) {
     downloadLink.click();
   } else status.textContent = 'Your Sift beta is ready to download.';
 }
+
+fetch('../downloads/beta.json').then(response => response.ok ? response.json() : null).then(info => {
+  if (info && typeof info.version === 'string' && /^\d+\.\d+\.\d+$/.test(info.version))
+    document.querySelector('#beta-version').textContent = `Beta ${info.version}`;
+}).catch(() => {});
