@@ -90,3 +90,6 @@ button:focus-visible, select:focus-visible, summary:focus-visible { outline:2px 
   .install-help, .beta-note { margin-left:41px; }
 }
 @media(prefers-reduced-motion:reduce) { *, *::before, *::after { scroll-behavior:auto !important; } }
+
+.developer-guide .guide-top { border-bottom:0; }
+.developer-guide .guide-toggle { outline:3px solid #dceaff; outline-offset:3px; }
