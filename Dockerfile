@@ -6,4 +6,6 @@ COPY --chown=nginx:nginx index.html pricing.html privacy.html terms.html style.c
 
 COPY --chown=nginx:nginx assets/ /usr/share/nginx/html/assets/
 
+COPY --chown=nginx:nginx beta/ /usr/share/nginx/html/beta/
+
 EXPOSE 8080
