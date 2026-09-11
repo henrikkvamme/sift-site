@@ -34,19 +34,17 @@
       <p>
         Settings, temporary pass state, and hourly usage totals stay in your browser's local or
         session storage. Completed generic video summaries and their video IDs are cached in a local
-        database so they can be reused across tabs and browser sessions. Sift does not persist
-        searches, URLs, transcripts, chat questions, or adult-site activity.
+        database so they can be reused across tabs and browser sessions. Completed conversations, including your questions, answers and cited links, are saved locally until you clear local data. Sift does not save browsing searches, transcripts or adult-site activity.
       </p>
 
       <h2>Hosted AI</h2>
       <p>
         After you enable AI answers, hovering or keyboard-focusing a video requests a summary. Opening
         the video reuses its cached summary. For a summary or chat answer, Sift sends the selected video's transcript, your
-        question, and recent in-memory chat context to the Sift API and OpenRouter. The free tier
-        selects from suitable free models available at the time. Pro uses a paid model. Sift
+        question, and recent conversation context to the Sift API and OpenRouter. Sift
         uses OpenRouter's zero-data-retention routing and denies providers that collect prompt data.
         The Sift API does not save transcript, question, chat, or answer content after the request
-        finishes. Completed generic summaries are saved only in your browser as described above.
+        finishes. Completed summaries and conversations are saved only in your browser as described above.
       </p>
       <p>
         The Sift API stores an opaque installation ID, a keyed hash of the installation credential,
@@ -62,6 +60,9 @@
         The draft is deleted when you accept the feed or after 30 days.
       </p>
 
+      <h2>Web search in chat</h2>
+      <p>When a question needs web information, Sift sends short search queries to Exa and uses the returned excerpts to answer with source links. Video summaries do not use web search. Sift does not send your account details or the full transcript to Exa, and does not save search queries or results on its servers. Queries can reveal the topic you are asking about.</p>
+      <p>Exa processes queries under <a href="https://exa.ai/privacy-policy">its privacy policy</a>. Exa's retention terms are separate from our model providers; Sift does not claim zero data retention for Exa. Cited answers are saved with your conversation on this browser.</p>
       <h2>Google sign-in</h2>
       <p>Signing in is optional. To activate Pro, Google shares your name, email address, profile image, and a stable account identifier with Sift. We use these to manage your account and early-access eligibility. We request no access to your YouTube history, subscriptions, or Google Drive.</p>
       <p>We store your account, linked installations, activation and expiry dates, and request counts. Essential session cookies keep you signed in for up to seven days; session records may include your IP address and browser information for security. Provider tokens are encrypted. Activation links expire after ten minutes and work once.</p>
@@ -78,8 +79,8 @@
       <p>Feedback you submit is saved privately and delivered to our GitHub issue tracker. You can include an anonymous diagnostic session link to help us investigate. Your feedback text is shared only when you press Send feedback. The temporary delivery copy is removed after GitHub accepts it.</p>
       <h2>Sharing and sale</h2>
       <p>
-        Sift shares hosted-AI content only with the Sift API, OpenRouter, and an eligible
-        zero-data-retention model provider to return the answer you requested. Stripe receives
+        Sift shares hosted-AI content with the Sift API, OpenRouter, and an eligible
+        zero-data-retention model provider to return the answer you requested. Exa receives short queries for web search as described above. Stripe receives
         payment and subscription data. Sift does not sell data, use data for advertising, or use
         data for lending or credit decisions.
       </p>
