@@ -6,6 +6,8 @@ const ua = navigator.userAgent;
 const mobile = /Android|iPhone|iPad|iPod/i.test(ua) || (/Mac/i.test(navigator.platform) && navigator.maxTouchPoints > 1);
 const chromium = /Chrome|Chromium|Edg\//.test(ua) && !mobile;
 const platformName = /Win/i.test(navigator.platform) ? 'windows' : /Mac|iPhone|iPad|iPod/i.test(navigator.platform) ? 'mac' : 'linux';
+const useMacInstaller = platformName === 'mac' && !mobile && !new URLSearchParams(location.search).has('manual');
+if (useMacInstaller) location.replace('/beta/mac/');
 const instructions = {
   mac: 'Double-click <strong>sift-beta.zip</strong> in Downloads.',
   windows: 'Right-click <strong>sift-beta.zip</strong> and choose <strong>Extract All</strong>.',
@@ -38,7 +40,7 @@ if (!chromium) {
   document.querySelector('#device-notice').hidden = false;
   document.querySelector('#device-message').textContent = mobile ? 'Sift works on computers for now. Open this page in desktop Chrome.' : 'To install Sift, open this page in Chrome on your computer.';
   status.textContent = 'Download Sift for desktop Chrome.';
-} else {
+} else if (!useMacInstaller) {
   const key = `sift-beta-download:${location.pathname}:${downloadLink.getAttribute('href')}`;
   let attempted = false;
   try { attempted = sessionStorage.getItem(key) === 'requested'; } catch { /* The page also works with storage disabled. */ }
