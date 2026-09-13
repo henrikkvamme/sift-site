@@ -9,6 +9,7 @@
     <title>Sift Beta for Mac</title>
     <link rel="stylesheet" href="../../style.css" />
     <link rel="stylesheet" href="../install.css" />
+    <script type="module" src="./setup.js"></script>
   </head>
   <body class="install-page">
     <a class="skip-link" href="#main">Skip to instructions</a>
@@ -30,17 +31,53 @@
           <p>Open the downloaded ZIP, then open <strong>Sift Beta Setup</strong> and choose <strong>Install</strong>.</p>
           <p class="step-note">Setup keeps Sift in Application Support, safely outside Downloads, and copies its folder path for you.</p>
         </div></li>
-        <li class="install-step"><span class="step-number" aria-hidden="true">2</span><div class="step-body">
-          <h2>Load Sift in Chrome.</h2>
-          <p>Open <code>chrome://extensions</code> and turn on <strong>Developer mode</strong>. Choose <strong>Load unpacked</strong>, press <strong>⌘⇧G</strong>, paste the copied path and select the folder.</p>
-          <p class="step-note">Keep Developer mode on. This step is only needed once per browser profile.</p>
-        </div></li>
-        <li class="install-step"><span class="step-number" aria-hidden="true">3</span><div class="step-body">
-          <h2>Get future updates inside Sift.</h2>
-          <p>Open Sift Settings and choose <strong>Update Sift and refresh</strong> when an update is available.</p>
-          <p class="step-note">Sift saves pending preferences, installs the update and refreshes your YouTube tabs. Videos stay paused at their position.</p>
-        </div></li>
+        <li class="install-step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <div class="step-body">
+            <h2>Open your extensions.</h2>
+            <p>Paste this address into a new Chrome tab.</p>
+            <div class="address-control">
+              <label class="sr-only" for="extensions-address">Chrome extensions address</label>
+              <input id="extensions-address" readonly value="chrome://extensions/" spellcheck="false" />
+              <button id="copy-address" type="button" aria-label="Copy Chrome extensions address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span id="copy-label">Copy</span></button>
+            </div>
+            <p id="copy-status" class="copy-status" role="status"></p>
+          </div>
+        </li>
+        <li class="install-step add-step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <div class="step-body">
+            <h2>Turn on Developer mode.</h2>
+            <p>You’ll find the toggle in the <strong>top right</strong>.</p>
+            <figure class="chrome-guide developer-guide" aria-label="Chrome’s Extensions page with Developer mode switched on in the top-right corner.">
+              <div class="guide-top"><span>Extensions</span><span class="guide-developer">Developer mode <span class="guide-toggle" aria-hidden="true"></span></span></div>
+            </figure>
+          </div>
+        </li>
+        <li class="install-step add-step">
+          <span class="step-number" aria-hidden="true">4</span>
+          <div class="step-body">
+            <h2>Add Sift.</h2>
+            <p>Copy this folder path. Select <strong>Load unpacked</strong>, press <strong>⌘⇧G</strong>, paste it and select the folder.</p>
+            <div class="address-control">
+              <label class="sr-only" for="folder-address">Sift extension folder</label>
+              <input id="folder-address" readonly value="~/Library/Application Support/Sift Beta/extension" spellcheck="false" />
+              <button id="copy-folder" type="button" aria-label="Copy Sift extension folder"><span id="folder-copy-label">Copy</span></button>
+            </div>
+            <p id="folder-copy-status" class="copy-status" role="status"></p>
+            <p class="step-note">Keep Developer mode on. You only need these steps once per browser profile.</p>
+            <figure class="chrome-guide" aria-label="Chrome’s Extensions toolbar with Load unpacked at the top left.">
+              <div class="guide-toolbar"><span class="guide-load">Load unpacked</span><span class="guide-muted">Pack extension</span><span class="guide-muted">Update</span></div>
+              <div class="guide-card"><img src="../../sift-128.png" width="26" height="26" alt="" /><div><span>Sift</span><small>YouTube, without the noise.</small></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg></div>
+            </figure>
+          </div>
+        </li>
       </ol>
+      <section class="install-finish" aria-label="After installing">
+        <div><h2>Ready when you are.</h2><p>Open YouTube, or refresh it if it’s already open.</p></div>
+        <a class="install-cta" href="https://www.youtube.com/" target="_blank" rel="noopener">Open YouTube <span aria-hidden="true">↗</span><span class="sr-only"> in a new tab</span></a>
+      </section>
+      <p class="beta-note">Future updates: open Sift Settings and choose <strong>Update Sift and refresh</strong>. Your preferences and local data stay, and videos remain paused at their position.</p>
       <details class="install-help"><summary>Already using Sift?</summary><div class="help-content">
         <h3>Moving an unpacked beta</h3><p>Run Setup and load the new folder without removing Sift from Chrome first. Removing the extension can erase its local data. Then refresh your YouTube tabs.</p>
         <h3>Already installed with Setup</h3><p>Update from Sift Settings. You do not need to download Setup again for ordinary updates.</p>
