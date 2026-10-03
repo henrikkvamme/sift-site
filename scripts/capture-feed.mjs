@@ -16,7 +16,7 @@ const videos=[
 ]
 const fixture=`<!doctype html><html><head><meta charset="utf-8"><title>YouTube</title></head><body><ytd-app><ytd-rich-grid-renderer><div id="contents">${videos.map(([title,channel,meta],i)=>`<ytd-rich-grid-media><a id="video-title-link" href="/watch?v=demo000000${i}">${title}</a><ytd-channel-name>${channel}</ytd-channel-name><div id="metadata-line">${meta}</div></ytd-rich-grid-media>`).join('')}</div></ytd-rich-grid-renderer></ytd-app></body></html>`
 const extension=path.join(sift,'dist-store')
-const context=await chromium.launchPersistentContext('',{headless:true,channel:'chromium',executablePath:process.env.SIFT_BROWSER||'/Applications/Helium.app/Contents/MacOS/Helium',colorScheme:'light',viewport:{width:1280,height:800},deviceScaleFactor:2,args:[`--disable-extensions-except=${extension}`,`--load-extension=${extension}`,'--no-first-run']})
+const context=await chromium.launchPersistentContext('',{headless:true,channel:'chromium',executablePath:process.env.SIFT_BROWSER||'/Applications/Brave Browser.app/Contents/MacOS/Brave Browser',colorScheme:'light',viewport:{width:1280,height:800},deviceScaleFactor:2,args:[`--disable-extensions-except=${extension}`,`--load-extension=${extension}`,'--no-first-run']})
 try {
  await context.route('https://www.youtube.com/**',route=>route.request().isNavigationRequest()?route.fulfill({contentType:'text/html',body:fixture}):route.abort())
  await context.route('https://api.sifttheweb.com/**',route=>route.abort())
