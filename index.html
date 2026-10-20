@@ -8,6 +8,8 @@
     <link rel="icon" type="image/png" href="./assets/favicon-128.png" />
     <title>Sift - YouTube, without the noise.</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./demo.css" />
+    <script type="module" src="./demo.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -33,12 +35,26 @@
         </div>
         <p class="install-note">Six months of Sift Pro, free. First 1,000 activations.</p>
       </section>
-      <figure class="app-preview">
-        <picture>
+      <figure class="app-demo">
+        <div class="demo-window" id="sift-demo" data-view="feed" hidden>
+          <div class="demo-bar">
+            <button class="demo-brand" type="button" aria-label="Back to the demo feed"><img src="./sift-128.png" width="24" height="24" alt="" /><span>Sift</span></button>
+            <div class="demo-search" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m21 21-4.3-4.3M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14" /></svg><span>Search YouTube</span></div>
+            <div class="demo-account" aria-hidden="true"><span class="demo-avatar">S</span><span class="demo-account-name">Sift</span><span class="demo-plan">Pro</span></div>
+          </div>
+          <div class="demo-body">
+            <ol class="demo-feed" aria-label="Demo feed"></ol>
+            <section class="demo-watch" aria-label="Demo video" hidden></section>
+          </div>
+        </div>
+        <div class="demo-fallback">
+          <picture>
           <source media="(max-width: 600px)" srcset="./assets/site-feed-mobile.png" width="390" height="760" />
           <img src="./assets/site-feed-desktop.png" width="1280" height="800"
           alt="Sift on YouTube: a search bar above a quiet text feed, with video titles, channels, and viewing details." />
         </picture>
+        </div>
+        <figcaption class="demo-caption"><span class="demo-hint-hover">Try it: hover a title for its summary, then open it.</span><span class="demo-hint-touch">Try it: tap a title to read its summary.</span> Sample content.</figcaption>
       </figure>
       <section class="features" aria-label="A more intentional way to watch">
         <article class="feature">
