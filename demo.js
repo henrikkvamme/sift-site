@@ -378,6 +378,7 @@ const mount = (root) => {
     stopWatch = stream([...summary.parts, ...points.parts], renderChips)
   }
 
+  const previews = []
   VIDEOS.forEach((video, index) => {
     const row = el('li', 'demo-row')
     const button = el('button', 'demo-row-button')
@@ -401,6 +402,7 @@ const mount = (root) => {
         hidePreview = () => {}
       }
       preview.hidden = true
+      row.classList.remove('demo-row--active')
       button.removeAttribute('aria-describedby')
     }
     const show = () => {
@@ -415,6 +417,7 @@ const mount = (root) => {
         preview.classList.toggle('demo-preview--above', above)
         preview.replaceChildren(el('p', 'demo-preparing', 'Preparing summary…'))
         preview.hidden = false
+        row.classList.add('demo-row--active')
         button.setAttribute('aria-describedby', preview.id)
         const wait = setTimeout(() => {
           const summary = overview(video)
@@ -434,7 +437,27 @@ const mount = (root) => {
       if (event.key === 'Escape') hide()
     })
     button.addEventListener('click', () => openVideo(video, button))
+    previews.push(show)
   })
+
+  // Open the first summary once, the first time the demo comes into view, so it reads as live.
+  const canHover = window.matchMedia('(hover: hover)').matches
+  let touched = false
+  root.addEventListener('pointerenter', () => (touched = true), { once: true })
+  root.addEventListener('focusin', () => (touched = true), { once: true })
+  if (canHover && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return
+        observer.disconnect()
+        setTimeout(() => {
+          if (!touched && root.dataset.view === 'feed') previews[0]?.()
+        }, 500)
+      },
+      { threshold: 0.6 },
+    )
+    observer.observe(root)
+  }
 
   root.querySelector('.demo-brand').addEventListener('click', showFeed)
   root.hidden = false
