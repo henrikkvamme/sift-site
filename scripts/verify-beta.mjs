@@ -8,7 +8,8 @@ import { createServer } from 'node:http'
 import { mkdtemp, readFile, stat, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
-const root = path.resolve(import.meta.dirname, '..')
+// Serve the built site. Run `bun run build` first.
+const root = path.resolve(import.meta.dirname, '..', 'dist')
 const sift = path.resolve(process.argv[2] || '../sift')
 const { chromium } = createRequire(path.join(sift, 'package.json'))('playwright')
 const output = await mkdtemp(path.join(tmpdir(), 'sift-beta-verify-'))

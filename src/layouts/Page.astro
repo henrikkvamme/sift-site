@@ -1,0 +1,33 @@
+---
+// The document shell that every page shares. `root` is the relative path from the page to the
+// site root, so the published HTML keeps its relative links.
+interface Props {
+  title: string
+  description: string
+  canonical: string
+  root: './' | '../' | '../../'
+  skipLabel?: string
+  bodyClass?: string
+  mode?: string
+}
+
+const { title, description, canonical, root, skipLabel = 'Skip to content', bodyClass, mode } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href={`${root}assets/favicon-128.png`} />
+    <title>{title}</title>
+    <link rel="stylesheet" href={`${root}style.css`} />
+    <slot name="head" />
+  </head>
+  <body class={bodyClass} data-mode={mode}>
+    <a class="skip-link" href="#main">{skipLabel}</a>
+    <slot />
+  </body>
+</html>

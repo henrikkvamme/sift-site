@@ -1,0 +1,15 @@
+---
+interface Props {
+  root: './' | '../' | '../../'
+}
+
+const { root } = Astro.props
+---
+
+<header class="site-header wrap">
+  <a class="brand" href={root} aria-label="Sift home">
+    <img class="brand-mark" src={`${root}sift-128.png`} width="30" height="30" alt="" />
+    <span>Sift</span>
+  </a>
+  <slot />
+</header>

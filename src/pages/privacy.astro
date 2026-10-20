@@ -1,0 +1,119 @@
+---
+import LegalBrand from '../components/LegalBrand.astro'
+import Page from '../layouts/Page.astro'
+---
+
+<Page
+  title="Privacy - Sift"
+  description="Sift privacy policy"
+  canonical="https://sifttheweb.com/privacy.html"
+  root="./"
+>
+  <main id="main" class="legal" tabindex="-1">
+    <LegalBrand />
+    <h1>Privacy</h1>
+    <p class="lede">
+      Sift's focus features run locally. Hosted AI transfers content only after you choose to use
+      it.
+    </p>
+
+    <h2>What Sift handles</h2>
+    <p>
+      Sift reads YouTube page content and the current YouTube URL on your device to determine
+      which interface to show and to provide focused search results, a video brief, and
+      transcripts provided by YouTube. It also measures feature use and observed playback in
+      hourly totals. Sift does not store the URL.
+    </p>
+
+    <h2>What Sift stores</h2>
+    <p>
+      Settings, temporary pass state, and hourly usage totals stay in your browser's local or
+      session storage. Completed generic video summaries and their video IDs are cached in a local
+      database so they can be reused across tabs and browser sessions. Completed conversations, including your questions, answers and cited links, are saved locally until you clear local data. Sift does not save browsing searches, transcripts or adult-site activity.
+    </p>
+
+    <h2>Hosted AI</h2>
+    <p>
+      After you enable AI answers, hovering or keyboard-focusing a video requests a summary. Opening
+      the video reuses its cached summary. For a summary or chat answer, Sift sends the selected video's transcript, your
+      question, and recent conversation context to the Sift API and OpenRouter. Sift
+      uses OpenRouter's zero-data-retention routing and denies providers that collect prompt data.
+      The Sift API does not save transcript, question, chat, or answer content after the request
+      finishes. Completed summaries and conversations are saved only in your browser as described above.
+    </p>
+    <p>
+      The Sift API stores an opaque installation ID, a keyed hash of the installation credential,
+      subscription status, Stripe customer and subscription identifiers, signed webhook event
+      identifiers, and monthly AI-request counts. These records provide access, prevent duplicate
+      billing events, enforce the monthly allowance, and protect the service from abuse.
+    </p>
+    <p>
+      If you explicitly allow AI feed calibration, Sift also stores one bounded onboarding draft
+      for your authenticated installation. It contains visible titles, channel names, metadata,
+      descriptions, and your ordering or hide choices. It does not contain thumbnails, URLs, or
+      video IDs. This lets Sift restore your choices after a provider, quota, or network error.
+      The draft is deleted when you accept the feed or after 30 days.
+    </p>
+
+    <h2>Web search in chat</h2>
+    <p>When a question needs web information, Sift sends short search queries to Exa and uses the returned excerpts to answer with source links. Video summaries do not use web search. Sift does not send your account details or the full transcript to Exa, and does not save search queries or results on its servers. Queries can reveal the topic you are asking about.</p>
+    <p>Exa processes queries under <a href="https://exa.ai/privacy-policy">its privacy policy</a>. Exa's retention terms are separate from our model providers; Sift does not claim zero data retention for Exa. Cited answers are saved with your conversation on this browser.</p>
+    <h2>Google sign-in</h2>
+    <p>Signing in is optional. To activate Pro, Google shares your name, email address, profile image, and a stable account identifier with Sift. We use these to manage your account and early-access eligibility. We request no access to your YouTube history, subscriptions, or Google Drive.</p>
+    <p>We store your account, linked installations, activation and expiry dates, and request counts. Essential session cookies keep you signed in for up to seven days; session records may include your IP address and browser information for security. Provider tokens are encrypted. Activation links expire after ten minutes and work once.</p>
+    <h2>Payments</h2>
+    <p>
+      Stripe processes Sift Pro checkout details such as email, billing country, tax
+      information, and payment method under
+      <a href="https://stripe.com/privacy">Stripe's privacy policy</a>. Sift receives customer and
+      subscription identifiers but does not receive or store complete card details.
+    </p>
+
+    <h2>Diagnostics and feedback</h2>
+    <p>Sift uses PostHog in the EU for anonymous feature counts, error reports, and masked session replay. Recordings show Sift’s layout and interactions, not native YouTube, search text, video descriptions, transcripts, chat content, images, or account details. Raw console logs and network payloads are not recorded. Turn this off with <strong>Share anonymous diagnostics</strong> in Settings.</p>
+    <p>Feedback you submit is saved privately and delivered to our GitHub issue tracker. You can include an anonymous diagnostic session link to help us investigate. Your feedback text is shared only when you press Send feedback. The temporary delivery copy is removed after GitHub accepts it.</p>
+    <h2>Sharing and sale</h2>
+    <p>
+      Sift shares hosted-AI content with the Sift API, OpenRouter, and an eligible
+      zero-data-retention model provider to return the answer you requested. Exa receives short queries for web search as described above. Stripe receives
+      payment and subscription data. Sift does not sell data, use data for advertising, or use
+      data for lending or credit decisions.
+    </p>
+
+    <h2>Control and retention</h2>
+    <p>
+      Usage totals are retained for the period selected in Settings. You can export the totals or
+      clear local data, including settings, measurements, and cached summaries, at any time. Cached
+      summaries remain until you clear local data or uninstall Sift. Uninstalling Sift also removes its
+      browser storage. High Signal onboarding drafts expire after 30 days and are deleted when
+      you accept the feed.
+    </p>
+    <p>
+      Use <strong>Disconnect this browser</strong> in Settings to remove the installation and its credential. Older versions call this <strong>Delete hosted account</strong>. Any paid subscription for that installation is canceled immediately. Your Google account, offer dates, and account-wide usage counts remain, so reconnecting does not restart an offer or quota. To delete your Sift account and linked data, email support@sifttheweb.com. Stripe and Sift may retain transaction records where law requires it.
+    </p>
+
+    <h2>Permissions</h2>
+    <p>
+      Sift runs only on youtube.com. It uses storage for local settings, totals, and cached summaries, alarms to end
+      temporary passes, and declarative network rules to redirect distracting YouTube feeds to its
+      packaged search page.
+    </p>
+
+    <h2>Limited Use</h2>
+    <p>
+      Sift's use of information received from Google APIs adheres to the Chrome Web Store User
+      Data Policy, including the Limited Use requirements.
+    </p>
+
+    <h2>Changes and support</h2>
+    <p>
+      Material policy changes will be posted here with a new effective date. For privacy questions
+      or support, email <a href="mailto:support@sifttheweb.com">support@sifttheweb.com</a>.
+    </p>
+    <p>
+      Sift is operated by KVAMME CONSULTING, Norwegian organisation number 934 252 632, from
+      Solfjell 13, 5300 Kleppestø, Vestland, Norway.
+    </p>
+    <p class="fine">Effective 8 September 2026</p>
+  </main>
+</Page>

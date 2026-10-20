@@ -1,0 +1,29 @@
+---
+// The full footer is on the home and pricing pages. The install pages use the short one.
+interface Props {
+  root: './' | '../' | '../../'
+  short?: boolean
+}
+
+const { root, short = false } = Astro.props
+---
+
+{
+  short ? (
+    <footer class="site-footer wrap">
+      <nav aria-label="Sift links">
+        <a href={`${root}privacy.html`}>Privacy</a>
+        <a href={`${root}terms.html`}>Terms</a>
+      </nav>
+    </footer>
+  ) : (
+    <footer class="site-footer wrap">
+      <nav aria-label="Sift links">
+        <a href={`${root}privacy.html`}>Privacy</a>
+        <a href={`${root}terms.html`}>Terms</a>
+        <a href="mailto:support@sifttheweb.com">Support</a>
+      </nav>
+      <p class="fine">Sift is operated by KVAMME CONSULTING, Norwegian organisation number 934 252 632.</p>
+    </footer>
+  )
+}
