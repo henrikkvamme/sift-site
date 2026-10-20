@@ -2,6 +2,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "bun test pricing.test.js"
+    "test": "bun test pricing.test.js dockerfile.test.js"
   }
 }
