@@ -56,8 +56,12 @@ a:hover { text-decoration: underline; }
 .hero { padding: 84px 0 64px; }
 .eyebrow { margin-bottom: 22px; font-size: 14px; }
 .lede { max-width: 520px; margin-top: 24px; font-size: 20px; line-height: 1.55; }
-.install-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 32px; min-height: 50px; margin-top: 32px; padding: 12px 20px; border: 1px solid var(--paper); border-radius: 8px; background: var(--paper); color: var(--ground); font-size: 15px; font-weight: 500; }
+.install-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 32px; min-height: 50px; margin-top: 32px; padding: 12px 20px; border: 1px solid var(--paper); border-radius: 8px; background: var(--paper); color: var(--ground); font-size: 15px; font-weight: 500; text-decoration: none; }
 .install-cta:hover { background: var(--ground-raised); color: var(--paper); text-decoration: none; }
+.install-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 32px; }
+.install-actions .install-cta { margin-top: 0; }
+.preview-link { color: var(--ink-soft); font-size: 15px; text-decoration: underline; text-underline-offset: 4px; }
+.preview-link:hover { color: var(--paper); }
 .install-note { margin-top: 12px; font-size: 13px; color: var(--ink-faint); }
 .app-preview img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 12px; }
 figcaption { padding-top: 14px; font-size: 13px; color: var(--ink-faint); }
