@@ -1,8 +1,5 @@
 /* The demo copies the extension's feed, hover summary, and video page. */
 .demo-window { --popover: #fff; position: relative; height: 600px; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--rule); border-radius: 12px; background: var(--ground); }
-.demo-window[hidden] { display: none; }
-.demo-window:not([hidden]) + .demo-fallback { display: none; }
-.demo-fallback img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 12px; }
 .demo-bar { display: flex; align-items: center; gap: 20px; padding: 16px 28px; }
 .demo-brand { display: inline-flex; align-items: center; gap: 8px; padding: 6px; margin: -6px; border: 0; border-radius: 8px; background: none; color: inherit; font: inherit; font-size: 19px; font-weight: 500; letter-spacing: -0.5px; cursor: pointer; }
 .demo-brand img { filter: brightness(0); opacity: 0.82; }
@@ -68,15 +65,6 @@
 .demo-send svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .demo-window button:focus-visible, .demo-chip:focus-visible { outline: 2px solid var(--ink-soft); outline-offset: 2px; }
 
-.demo-cue { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; font-size: 13px; color: var(--ink-soft); }
-.demo-cue:has(+ .demo-window[hidden]) { display: none; }
-.demo-live { width: 7px; height: 7px; border-radius: 50%; background: #3f8f4f; box-shadow: 0 0 0 0 #3f8f4f66; animation: demo-pulse 2s ease-out infinite; }
-@keyframes demo-pulse { 70% { box-shadow: 0 0 0 7px #3f8f4f00; } 100% { box-shadow: 0 0 0 0 #3f8f4f00; } }
-.demo-cue .demo-hint-touch { display: none; }
-@media (hover: none) {
-  .demo-cue .demo-hint-hover { display: none; }
-  .demo-cue .demo-hint-touch { display: inline; }
-}
 @media (max-width: 700px) {
   .demo-window { height: 600px; }
   .demo-bar { gap: 12px; padding: 14px 16px; }
@@ -92,7 +80,7 @@
   .demo-window[data-view='feed'] .demo-body { overflow: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .demo-preview, .demo-live { animation: none; }
+  .demo-preview { animation: none; }
 }
 .app-demo { margin: 0; }
 .app-demo figcaption { padding-top: 14px; font-size: 13px; color: var(--ink-faint); }
