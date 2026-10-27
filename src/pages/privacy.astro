@@ -55,6 +55,23 @@ import Page from '../layouts/Page.astro'
       The draft is deleted when you accept the feed or after 30 days.
     </p>
 
+    <h2>Instagram and X</h2>
+    <p>
+      Sift for Instagram and Sift for X are off by default. When you turn one on, Sift asks for
+      access to that site and changes its page on your device. Sift does not store messages, posts,
+      names, captions, or URLs from either site. On X, Sift stores only its settings and the times
+      of your Following visits. When you turn a site off, Sift removes its script from that site.
+    </p>
+    <p>
+      AI summaries are a separate setting, also off by default. With it on, Sift sends the text that
+      the page shows to the Sift API and OpenRouter for one summary: on X, a post and its loaded
+      replies, and on X or Instagram, the open chat when you choose Catch up. The text includes
+      the names or handles that the page shows. On Instagram, Sift marks each message only as yours
+      or theirs. On X, a post with many replies is summed up when you open it. The same
+      zero-data-retention routing applies. Neither Sift nor the Sift API stores the text or the
+      summary. The summary stays only in the open tab, and each one counts as one AI request.
+    </p>
+
     <h2>Web search in chat</h2>
     <p>When a question needs web information, Sift sends short search queries to Exa and uses the returned excerpts to answer with source links. Video summaries do not use web search. Sift does not send your account details or the full transcript to Exa, and does not save search queries or results on its servers. Queries can reveal the topic you are asking about.</p>
     <p>Exa processes queries under <a href="https://exa.ai/privacy-policy">its privacy policy</a>. Exa's retention terms are separate from our model providers; Sift does not claim zero data retention for Exa. Cited answers are saved with your conversation on this browser.</p>
@@ -94,9 +111,11 @@ import Page from '../layouts/Page.astro'
 
     <h2>Permissions</h2>
     <p>
-      Sift runs only on youtube.com. It uses storage for local settings, totals, and cached summaries, alarms to end
+      Sift runs on youtube.com. It uses storage for local settings, totals, and cached summaries, alarms to end
       temporary passes, and declarative network rules to redirect distracting YouTube feeds to its
-      packaged search page.
+      packaged search page. Access to instagram.com and x.com is optional and requested only when
+      you turn on Sift for that site. Sift uses the scripting permission to add its script to that
+      site only while the site is on and access is granted.
     </p>
 
     <h2>Limited Use</h2>
@@ -114,6 +133,6 @@ import Page from '../layouts/Page.astro'
       Sift is operated by KVAMME CONSULTING, Norwegian organisation number 934 252 632, from
       Solfjell 13, 5300 Kleppestø, Vestland, Norway.
     </p>
-    <p class="fine">Effective 25 October 2026</p>
+    <p class="fine">Effective 27 October 2026</p>
   </main>
 </Page>
